@@ -1,0 +1,22 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: hystrix-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+turbine:
+  aggregator:
+    clusterConfig: CONSUMER-MOVIE-RIBBON-WITH-HYSTRIX2 #服务名为Eureka页面显示的服务名 所以是大写
+  appConfig: consumer-movie-ribbon-with-hystrix2
+
+turbine.instanceUrlSuffix.CONSUMER-MOVIE-RIBBON-WITH-HYSTRIX2: /ribbon/hystrix.stream #监控页面为http://localhost:7901/ribbon/hystrix.stream，没加这个初始化缺少/ribbon/无法监控
+
+logging: 
+  level:
+    root: INFO
+    com.netflix.turbine.monitor: DEBUG

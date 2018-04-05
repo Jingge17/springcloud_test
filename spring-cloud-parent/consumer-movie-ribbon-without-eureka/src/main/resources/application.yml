@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: consumer-movie-ribbon-without-eureka
+server:
+  port: 7901
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+ribbon:
+  eureka:
+   enabled: false
+provider-user:
+  ribbon:
+    listOfServers: localhost:7900  #ribbon不用eureka的提供者列表，直接选取提供者ip地址获取数据

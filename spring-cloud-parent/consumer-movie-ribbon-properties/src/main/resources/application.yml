@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: consumer-movie-ribbon-properties
+server:
+  port: 7901
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #对provider-user实行ribbon随机负载均衡策略

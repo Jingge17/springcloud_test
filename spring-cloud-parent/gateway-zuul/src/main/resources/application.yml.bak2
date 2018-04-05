@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: gateway-zuul
+server:
+  port: 8030
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    abc: #定义多个路由规则（abc随便取得可以自定义）
+      path: /simple/**   
+      serviceId: provider-user
+    

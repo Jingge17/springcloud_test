@@ -1,0 +1,16 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: hystrix-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: CONSUMER-MOVIE-RIBBON #需要监听的服务 多个用逗号分割
+  clusterNameExpression: "'default'"

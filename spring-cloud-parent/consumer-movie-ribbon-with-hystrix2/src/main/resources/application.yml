@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: consumer-movie-ribbon-with-hystrix2
+server:
+  port: 7901
+  context-path: /ribbon #页面访问加前缀/ribbon
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+    home-page-url-path: /ribbon #访问eureka页面http://localhost:8000/eureka/apps/CONSUMER-MOVIE-RIBBON-WITH-HYSTRIX2   homePageUrl为http://169.254.113.223:7901/ribbon
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

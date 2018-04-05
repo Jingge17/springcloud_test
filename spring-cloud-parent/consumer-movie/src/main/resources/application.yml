@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: consumer-movie
+server:
+  port: 7901
+user: 
+  userServicePath: http://localhost:7900/simple/
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true

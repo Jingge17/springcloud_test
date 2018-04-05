@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: gateway-zuul
+server:
+  port: 8030
+eureka:
+  client:
+    service-url:
+      defaultZone: http://root:passwd@localhost:8000/eureka
+  instance:
+    prefer-ip-address: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000 #设置超时时间 用于上传文件 (请求需要添加前缀zuul跳过zuul服务器的文件大小限制)
+ribbon: #设置超时时间 用于上传文件
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
