@@ -26,6 +26,9 @@
 		<module>gateway-zuul-fallback</module>
 		<module>gateway-zuul-reg-exp</module>
 		<module>gateway-zuul-filter</module>
+		<module>consumer-movie-feign-customizing</module>
+		<module>consumer-movie-feign-with-hystrix</module>
+		<module>consumer-movie-feign-with-hystrix-factory</module>
   </modules>
 	
 	<properties>
